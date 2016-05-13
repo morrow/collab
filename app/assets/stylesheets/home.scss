@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+* {
+  padding:0;
+  margin:0;
+  user-select:none;
+}
+
+#somie {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  cursor:pointer;
+  font-family: 'Press Start 2P';
+  font-size:5em;
+  color:white;
+  text-shadow:1em;
+  display:block;
+  text-align:center;
+  width:9em;
+  height:1em;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-0.5em;
+  margin-left:-5em;
+}
+
