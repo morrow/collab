@@ -1,0 +1,10 @@
+<div id='social'>
+  <% if current_user %>
+    <div class='username' data-user-id='<%= current_user.id %>'>
+      <%= current_user.email %>
+    </div>
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>

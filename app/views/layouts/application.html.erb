@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SomieNet</title>
+    <title>Somie.net</title>
     <%= csrf_meta_tags %>
-
+    <style id='custom-style-tag' type='text/css'></style>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class='<%= getCurrentClass() %>'>
+    <div id='wrap'>
+      <header>
+         <div id='logo'><%= link_to 'Somie.net', '/' %></div>
+         <%= render 'shared/social' %>
+         <div class='notifications'>
+           <p class="notice"><%= notice %></p>
+           <p class="alert"><%= alert %></p>
+         </div>
+      </header>
+      <main><%= yield %></main>
+    </div>
   </body>
 </html>

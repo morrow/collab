@@ -1,0 +1,29 @@
+<div id='editor-wrap'>
+  <div id='editor-switcher'>
+    <button data-mode='html'>HTML</button>
+    <button data-mode='css'>CSS</button>
+    <button data-mode='javascript'>JavaScript</button>
+  </div>
+  <div id='editors'>
+    <textarea id='html_editor'><%= @html_code %></textarea>
+    <textarea id='css_editor'><%= @css_code %></textarea>
+    <textarea id='javascript_editor'><%= @javascript_code %></textarea>
+  </div>
+  <div id='output'>output</div>
+</div>
+<div id='chat'>
+  <div id='messages'><%= render @messages %></div>
+  <div id='editing_message'>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+    </div>
+  </div>
+  <input type="text" data-behavior="room_speaker" placeholder='Enter text to chat' />
+  <div id='video'>
+    <video autoplay width='320' height='240'></video>
+    <canvas width='320' height='240' style='display:none'></canvas>
+    <img width='320' height='240' src=''/>
+  </div>
+</div>
