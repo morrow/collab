@@ -1,5 +1,12 @@
-<div class='project' data-project-id='<%= @project.id %>'>
-  <h1 class='project-name'> <%= @project.name.capitalize %> Project</h1>
+<div id='project' data-project-id='<%= @project.id %>'>
+  <h1 class='project-name'>
+    <%= link_to 'Projects', projects_path %> /
+    <%= @project.name.capitalize %>
+  </h1>
   <p class='project-description'> <%= @project.description %></p>
+  <% if current_user == @project.user %>
+  <%= link_to "Edit Project", edit_project_path(@project), class: :edit_project %>
+  <% end %>
   <%= render 'editor/show' %>
+  <%= render 'rooms/chat' %>
 </div>

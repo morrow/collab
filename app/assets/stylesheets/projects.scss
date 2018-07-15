@@ -1,6 +1,32 @@
-.project {
+#projects {
+  padding: 1em;
+  .project {
+
+  }
+}
+
+#project {
+  display: flex;
+  flex-direction:column;
   h1, p {
-    font-family:'droid sans';
+    // font-family:'droid sans';
     text-align:center;
+  }
+  h1 {
+    a {
+      margin: 0;
+    }
+  }
+  h2 {
+    padding: 0.5em;
+    text-align: center;
+  }
+  .project-description {
+    margin: 0.5em;
+    font-size:1.25em;
+  }
+  a.edit_project {
+    align-self:center;
+    margin: 0.5em;
   }
 }

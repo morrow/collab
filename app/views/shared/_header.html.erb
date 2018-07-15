@@ -1,0 +1,10 @@
+<header>
+  <div id='logo'><%= link_to 'Collab', '/' %></div>
+  <%= render 'shared/social' %>
+</header>
+<% if notice or alert %>
+  <div id='notifications'>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+<% end %>

@@ -3,6 +3,7 @@ Rails.application.configure do
 
   # action cable allowed origins
   config.action_cable.allowed_request_origins = ['https://somie.net']
+  config.action_cable.allowed_request_origins = ['http://localhost:4000']
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

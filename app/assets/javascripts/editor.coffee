@@ -1,5 +1,5 @@
-class window.Editor
-  
+class window.CodeMirrorEditor
+
   constructor: (mode, element)->
     window.allow_text_edits =
       html: true

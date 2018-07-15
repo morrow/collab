@@ -1,0 +1,16 @@
+<div id='chat' data-current-user='<%= current_user.id %>'>
+  <div id='messages'><%= render @messages, locals: {current_user_id: current_user.id} %></div>
+  <div id='editing_message'>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+    </div>
+  </div>
+  <input type="text" data-behavior="room_speaker" placeholder='Enter text to chat' />
+  <div id='video'>
+    <video autoplay width='320' height='240'></video>
+    <canvas width='320' height='240' style='display:none'></canvas>
+    <img width='320' height='240' src=''/>
+  </div>
+</div>

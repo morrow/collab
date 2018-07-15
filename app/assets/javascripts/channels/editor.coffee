@@ -7,8 +7,8 @@ App.editor = App.cable.subscriptions.create "EditorChannel",
     console.log 'disconnected'
 
   received: (data) ->
-    @evaluate()
     if data['text']?
+      @evaluate()
       if window.allow_text_edits[data['mode']]
         editor = window["#{data['mode']}_editor"]
         cursor = editor.getCursor()
@@ -17,7 +17,10 @@ App.editor = App.cable.subscriptions.create "EditorChannel",
         editor.setCursor(cursor)
         editor.getScrollerElement().scrollTop = scroll_top
     else if data['message']
+      current_user_id = $('#chat').data('current-user')
       $('#messages').append data['message']
+      if $('#messages .message:last-child').data('user-id') ==  current_user_id
+        $('#messages .message:last-child')[0].dataset.currentUser = ''
       $('#chat')[0].scrollTop = $('#chat')[0].scrollHeight
 
   sendText:(mode, text, project_id=0)->
@@ -25,7 +28,7 @@ App.editor = App.cable.subscriptions.create "EditorChannel",
       project_id: project_id
       mode: mode
       text: escape(text)
-  
+
   sendMessage:(content, project_id)->
     @perform 'sendMessage',
       content: content
@@ -36,6 +39,7 @@ App.editor = App.cable.subscriptions.create "EditorChannel",
     window.history.pushState({mode: mode}, '', window.location.pathname.replace(/html|css|javascript/g, '').replace(/\/+$/g, '') + "/#{mode}") if push
     $("#editor-switcher [data-mode]").removeClass 'current'
     window["#{mode}_editor"].getWrapperElement().style.display = 'block'
+    # console.log(window["#{mode}_editor"].getWrapperElement())
     $("#editor-switcher [data-mode=#{mode}]").addClass 'current'
 
   evaluate: ->

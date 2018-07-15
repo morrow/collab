@@ -1,24 +1,32 @@
+body {
+  // font-family: 'Open Sans';
+  font-family:'Share Tech Mono';
+}
+
+a:visited {
+  color: inherit;
+  &[data-method="delete"]{
+    color: red;
+  }
+}
+
 header {
-  font-family:'Droid Sans';
   font-size:1em;
-  border-bottom: 1px solid #333;
-  margin-bottom:1em;
-  text-align:right;
-  position:relative;
-  height:4em;
+  display: flex;
+  background: #333;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 0.5em;
   #logo {
-    position:absolute;
-    left:0;
-    top:1.25em;
-    left:1.25em;
+    padding: 0.5em;
     a {
       font-size:2em;
       text-decoration:none;
       font-weight:bold;
       font-family:'VT323';
-      color:orangered;
+      color:white;
     }
-  } 
+  }
   #social {
     div {
       font-weight:bold;
@@ -26,11 +34,28 @@ header {
     }
     div, a{
       display:inline-block;
-      margin:0.5em 3em;
-      text-decoration:none;
+      margin:0.5em 1em;
+      // text-decoration:none;
     }
     a {
-      color:black;
+      color:#aaa;
     }
-   }
+  }
+}
+
+ #notifications {
+  width: 100%;
+  background: white;
+  text-align: center;
+  padding: 0.75em;
+  .notice {
+    color: green;
+  }
+  .alert {
+    color: orangered;
+  }
+}
+
+main {
+  padding: 2em;
 }

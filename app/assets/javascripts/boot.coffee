@@ -1,9 +1,9 @@
 $(document).ready ->
   # create code mirror editors from text boxes
-  for language in ['html', 'css', 'javascript'] 
+  for language in ['html', 'css', 'javascript']
     editor_name = "#{language}_editor"
     if $("##{editor_name}")
-      window[editor_name] = new Editor(language, $("##{editor_name}")[0])
+      window[editor_name] = new CodeMirrorEditor(language, $("##{editor_name}")[0])
   # listen for editor switch actions
   $('#editor-switcher button').on 'click', (e)=>
     App.editor.switchCodeMirror(e.target.getAttribute('data-mode'))
@@ -11,7 +11,7 @@ $(document).ready ->
     if e.keyCode is 13
       App.editor.sendMessage(@value, $('[data-project-id]').data('projectId'))
       @value = ''
-  # scroll chat  
+  # scroll chat
   if $('#chat').length
     $('#chat')[0].scrollTop = $('#chat')[0].scrollHeight
   # listen for pop state

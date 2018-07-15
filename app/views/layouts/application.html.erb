@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Somie.net</title>
+    <title>Collab</title>
     <%= csrf_meta_tags %>
     <style id='custom-style-tag' type='text/css'></style>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,14 +10,7 @@
 
   <body class='<%= getCurrentClass() %>'>
     <div id='wrap'>
-      <header>
-         <div id='logo'><%= link_to 'Somie.net', '/' %></div>
-         <%= render 'shared/social' %>
-         <div class='notifications'>
-           <p class="notice"><%= notice %></p>
-           <p class="alert"><%= alert %></p>
-         </div>
-      </header>
+      <%= render 'shared/header' %>
       <main><%= yield %></main>
     </div>
   </body>

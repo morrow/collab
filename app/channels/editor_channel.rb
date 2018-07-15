@@ -10,7 +10,6 @@ class EditorChannel < ApplicationCable::Channel
   def sendText(data)
     mode = ['html', 'css', 'javascript'].index(data['mode'])
     c = Project.find(data['project_id']).codes[mode]
-    puts mode, c
     c.update! text: data['text']
   end
 

@@ -1,1 +1,6 @@
-<h1 id='somie'>Somie.net</h1>
+<h1>Collab</h1>
+<% if current_user %>
+  <h2><%= link_to "Projects", projects_path %></h2>
+<% else %>
+  <h2><%= link_to "Projects", new_registration_path('user') %></h2>
+<% end %>

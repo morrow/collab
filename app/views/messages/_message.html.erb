@@ -1,3 +1,4 @@
-<div class='message' data-user-id='<%= message.user.id %>'>
-  <div id='content'><%= message.content %></div>
+<div class='message' data-user-id='<%= message.user.id %>' <%= if defined? locals[:current_user_id] and locals[:current_user_id].to_s == message.user.id.to_s then 'data-current-user' end %> >
+  <div class='user'><%= message.user %></div>
+  <div class='content'><%= message.content %></div>
 </div>
